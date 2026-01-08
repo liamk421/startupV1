@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Consultation - TutorConnect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><a href="index.html">TutorConnect</a></h1>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#tutors">Our Tutors</a></li>
+                <li><a href="consultation.html" class="cta-button">Free Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="consultation-form">
+        <div class="container">
+            <h1>Schedule Your Free Consultation</h1>
+            <p>Tell us about your tutoring needs and we'll match you with the perfect alumni tutor from your school.</p>
+            
+            <form id="consultationForm" action="mailto:info@tutorconnect.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="school">High School *</label>
+                    <input type="text" id="school" name="school" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="grade">Current Grade *</label>
+                    <select id="grade" name="grade" required>
+                        <option value="">Select Grade</option>
+                        <option value="9">9th Grade</option>
+                        <option value="10">10th Grade</option>
+                        <option value="11">11th Grade</option>
+                        <option value="12">12th Grade</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjects">Subjects Needing Help *</label>
+                    <textarea id="subjects" name="subjects" rows="3" placeholder="e.g., AP Calculus, Chemistry, SAT Prep" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="goals">Learning Goals</label>
+                    <textarea id="goals" name="goals" rows="4" placeholder="What do you hope to achieve? Any specific challenges you're facing?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Preferred Availability</label>
+                    <textarea id="availability" name="availability" rows="2" placeholder="e.g., Weekday evenings, Saturday mornings"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Request Free Consultation</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Questions? Contact Us Directly</h3>
+                <p>Email: info@tutorconnect.com</p>
+                <p>We'll respond within 24 hours to schedule your consultation!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 TutorConnect. Connecting students with alumni for personalized learning.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            let emailBody = 'New Consultation Request:\n\n';
+            
+            for (let [key, value] of formData.entries()) {
+                emailBody += `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}\n`;
+            }
+            
+            const subject = 'Free Consultation Request - ' + formData.get('name');
+            const mailtoLink = `mailto:info@tutorconnect.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
