@@ -312,3 +312,186 @@ input:focus, select:focus, textarea:focus {
         padding: 20px;
     }
 }
+/* Tutors Page Styles */
+.tutors-hero {
+    background: linear-gradient(135deg, #2c5aa0 0%, #1e3f73 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.tutors-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.tutors-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.tutors-detailed {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.tutor-profile {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.tutor-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.tutor-header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.tutor-info h2 {
+    color: #2c5aa0;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.tutor-info .school {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.tutor-info .current {
+    color: #2c5aa0;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.subjects-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.subject-tag {
+    background: #2c5aa0;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tutor-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.tutor-details h3 {
+    color: #2c5aa0;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+}
+
+.achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements li {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.achievements li:before {
+    content: "✓";
+    color: #2c5aa0;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.teaching-approach p, .experience p {
+    line-height: 1.7;
+    color: #555;
+}
+
+.cta-section {
+    background: #2c5aa0;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button.large {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background: white;
+    color: #2c5aa0;
+}
+
+.cta-button.large:hover {
+    background: #f8f9fa;
+}
+
+.cta-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Responsive Design for Tutors Page */
+@media (max-width: 768px) {
+    .tutors-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tutor-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tutor-header img {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    .subjects-tags {
+        justify-content: center;
+    }
+    
+    .tutor-profile {
+        padding: 20px;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+}
