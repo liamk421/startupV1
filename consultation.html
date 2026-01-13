@@ -24,7 +24,8 @@
             <h1>Schedule Your Free Consultation</h1>
             <p>Tell us about your tutoring needs and we'll match you with the perfect alumni tutor from your school.</p>
             
-            <form id="consultationForm" action="mailto:info@tutorconnect.com" method="post" enctype="text/plain">
+            <!-- Replace YOUR_FORM_ID with your actual Formspree form ID -->
+            <form action="https://formspree.io/f/mqeekdaz" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -89,20 +90,15 @@
     </footer>
 
     <script>
-        document.getElementById('consultationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            let emailBody = 'New Consultation Request:\n\n';
-            
-            for (let [key, value] of formData.entries()) {
-                emailBody += `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}\n`;
-            }
-            
-            const subject = 'Free Consultation Request - ' + formData.get('name');
-            const mailtoLink = `mailto:info@tutorconnect.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-            
-            window.location.href = mailtoLink;
+        // Optional: Show success message after form submission
+        window.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function() {
+                // Show loading state
+                const button = form.querySelector('.submit-button');
+                button.textContent = 'Sending...';
+                button.disabled = true;
+            });
         });
     </script>
 </body>
