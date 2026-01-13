@@ -427,7 +427,7 @@ input:focus, select:focus, textarea:focus {
     left: 0;
 }
 
-.teaching-approach p, .experience p {
+.teaching-approach p, .experience p, .bio p {
     line-height: 1.7;
     color: #555;
 }
